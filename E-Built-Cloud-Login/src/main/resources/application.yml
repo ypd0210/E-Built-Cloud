@@ -3,6 +3,15 @@ server:
   servlet:
     context-path: /e-built-cloud
 
+spring:
+  data:
+    redis:
+      host: 43.138.10.223
+      password: Ypd050243.
+      database: 0
+      port: 6379
+      connect-timeout: 3000
+
 
 # springdoc-openapi项目配置
 springdoc:
@@ -15,7 +24,7 @@ springdoc:
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
-      packages-to-scan: com.xiaominfo.knife4j.demo.web
+      packages-to-scan:
 # knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true

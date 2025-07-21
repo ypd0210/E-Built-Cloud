@@ -1,16 +1,16 @@
-package org.ebuilt.ebuiltcloudlogin;
+package org.ebuilt.ebuiltcloudlogin.controller;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/body")
 @Tag(name = "body参数")
+@RequiredArgsConstructor
 public class BodyController {
 
     /*@Operation(summary = "普通body请求")
