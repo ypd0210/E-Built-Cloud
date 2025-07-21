@@ -1,10 +1,12 @@
 package org.ebuilt.ebuiltcloudlogin.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class BodyController {
 
-    /*@Operation(summary = "普通body请求")
+    @Operation(summary = "普通body请求")
     @PostMapping("/body")
-    public ResponseEntity<FileResp> body(@RequestBody FileResp fileResp){
-        return ResponseEntity.ok(fileResp);
+    public ResponseEntity body(){
+        return ResponseEntity.ok().build();
     }
 
     @Operation(summary = "普通body请求+Param+Header+Path")
@@ -26,8 +28,7 @@ public class BodyController {
             @Parameter(name = "name",description = "文件名称",required = true,in=ParameterIn.QUERY)
     })
     @PostMapping("/bodyParamHeaderPath/{id}")
-    public ResponseEntity<FileResp> bodyParamHeaderPath(@PathVariable("id") String id, @RequestHeader("token") String token, @RequestParam("name")String name, @RequestBody FileResp fileResp){
-        fileResp.setName(fileResp.getName()+",receiveName:"+name+",token:"+token+",pathID:"+id);
-        return ResponseEntity.ok(fileResp);
-    }*/
+    public ResponseEntity bodyParamHeaderPath(@PathVariable("id") String id, @RequestHeader("token") String token, @RequestParam("name")String name){
+        return ResponseEntity.ok().build();
+    }
 }
